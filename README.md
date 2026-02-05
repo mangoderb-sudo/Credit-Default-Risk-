@@ -5,4 +5,6 @@ The dataset contains financial, demographic, and credit-related features describ
 
 Several classification algorithms are implemented and compared, with a focus on model performance, interpretability, and robustness in the presence of class imbalance. Evaluation metrics such as ROC-AUC and precision-recall are used to assess model effectiveness. The project also emphasizes the identification of the most influential features and their economic interpretation in the context of credit risk management.
 
+Feature engineering was performed to incorporate financial intuition into the model. Several ratio-based and interaction features were created to better capture borrower affordability, financial pressure, and credit maturity. In addition, ordinal encoding was applied to credit grades to preserve their inherent risk ordering.
+
 This repository aims to provide a practical and reproducible example of credit risk modeling, suitable for academic purposes and as a foundation for real-world credit scoring applications
