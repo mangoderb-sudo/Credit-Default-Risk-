@@ -1,0 +1,18 @@
+logreg = Pipeline(steps=[
+    ("prep", preprocess_for_logreg),
+    ("model", LogisticRegression(max_iter=2000, solver="lbfgs"))
+])
+
+logreg.fit(X_train, y_train)
+
+proba_lr = logreg.predict_proba(X_test)[:, 1]
+auc_lr = roc_auc_score(y_test, proba_lr)
+auc_lr
+
+fpr, tpr, _ = roc_curve(y_test, proba_lr)
+plt.plot(fpr, tpr, label=f"LogReg AUC={auc_lr:.3f}")
+plt.plot([0,1],[0,1],"--")
+plt.xlabel("FPR")
+plt.ylabel("TPR")
+plt.legend()
+plt.show()
